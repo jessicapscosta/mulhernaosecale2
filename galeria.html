@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fotos do movimento no DF | Mulher, Não Se Cale!</title>
+  <meta name="description" content="Veja os registros das edições do Movimento Mulher, Não Se Cale! no Distrito Federal: ações em estações do metrô, terminais, feiras e comunidades."/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <link rel="canonical" href="https://mulhernaosecale.com.br/galeria.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Mulher, Não Se Cale!"/>
+  <meta property="og:title" content="Fotos do movimento no DF | Mulher, Não Se Cale!"/>
+  <meta property="og:description" content="Veja os registros das edições do Movimento Mulher, Não Se Cale! no Distrito Federal: ações em estações do metrô, terminais, feiras e comunidades."/>
+  <meta property="og:url" content="https://mulhernaosecale.com.br/galeria.html"/>
+  <meta property="og:image" content="https://mulhernaosecale.com.br/images/social-share.jpg"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Fotos do movimento no DF | Mulher, Não Se Cale!"/>
+  <meta name="twitter:description" content="Veja os registros das edições do Movimento Mulher, Não Se Cale! no Distrito Federal: ações em estações do metrô, terminais, feiras e comunidades."/>
+  <meta name="twitter:image" content="https://mulhernaosecale.com.br/images/social-share.jpg"/>
+  <link rel="icon" href="./images/favicon.webp" type="image/png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --red:#c0003a;--red-dark:#8a0028;--red-deep:#1a0008;
+      --bg:#120008;--bg-mid:#1a000e;--white:#fff;
+      --gray-light:#d4c4cb;--gray-mid:#9a7f89;--gray-dark:#3a1a24;
+      --fh:'Montserrat',sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--white);font-family:'Open Sans',sans-serif;min-height:100vh;}
+
+    /* NAVBAR */
+    nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(18,0,8,.97);backdrop-filter:blur(8px);
+      border-bottom:2px solid var(--red-deep);
+      padding:0 24px;height:70px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    nav a.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    nav a.logo img{height:44px;}
+    nav a.back{
+      font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--gray-light);text-decoration:none;
+      display:flex;align-items:center;gap:6px;transition:color .2s;
+    }
+    nav a.back:hover{color:var(--white);}
+    nav a.back svg{width:16px;height:16px;fill:currentColor;}
+
+    /* HERO DA GALERIA */
+    .gal-hero{
+      padding:60px 24px 40px;text-align:center;
+      background:linear-gradient(180deg, var(--red-deep) 0%, var(--bg) 100%);
+    }
+    .gal-hero h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.2rem);font-weight:900;text-transform:uppercase;}
+    .gal-hero h1 span{color:var(--red);}
+    .gal-hero p{color:var(--gray-light);margin-top:12px;font-size:.9rem;}
+
+    /* FILTROS */
+    .gal-controls{
+      max-width:1200px;margin:0 auto;padding:32px 24px 0;
+      display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+    }
+    .gal-controls input{
+      flex:1;min-width:200px;max-width:320px;
+      background:var(--bg-mid);border:1px solid var(--gray-dark);
+      border-radius:50px;padding:10px 18px;color:var(--white);
+      font-size:.82rem;font-family:'Open Sans',sans-serif;outline:none;
+      transition:border-color .2s;
+    }
+    .gal-controls input:focus{border-color:var(--red);}
+    .gal-controls input::placeholder{color:var(--gray-mid);}
+    .filter-btns{display:flex;flex-wrap:wrap;gap:8px;}
+    .fbtn{
+      font-family:var(--fh);font-size:.64rem;font-weight:700;letter-spacing:.1em;
+      text-transform:uppercase;padding:8px 16px;border-radius:50px;cursor:pointer;
+      border:1.5px solid var(--gray-dark);background:transparent;color:var(--gray-mid);
+      transition:.2s;
+    }
+    .fbtn:hover{border-color:var(--red);color:var(--white);}
+    .fbtn.active{background:var(--red);border-color:var(--red);color:var(--white);}
+    .gal-count{margin-left:auto;font-size:.75rem;color:var(--gray-mid);}
+    .config-tip strong{color:var(--gray-light);}
+
+    /* GRID */
+    .gal-main{max-width:1200px;margin:0 auto;padding:24px;}
+    .gal-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+      gap:12px;
+    }
+    .gal-item{
+      position:relative;overflow:hidden;border-radius:4px;
+      background:var(--bg-mid);cursor:pointer;
+      aspect-ratio:4/3;
+    }
+    .gal-item img{
+      width:100%;height:100%;object-fit:cover;
+      transition:transform .4s ease;display:block;
+    }
+    .gal-item:hover img{transform:scale(1.06);}
+    .gal-item.hidden{display:none;}
+
+    /* SKELETON */
+    .skeleton{
+      background:linear-gradient(90deg, var(--bg-mid) 25%, var(--gray-dark) 50%, var(--bg-mid) 75%);
+      background-size:200% 100%;
+      animation:shimmer 1.4s infinite;
+      border-radius:4px;
+      aspect-ratio:4/3;
+    }
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+    /* LOAD MORE */
+    .load-wrap{text-align:center;margin:32px 0;}
+    .btn-load-more{
+      font-family:var(--fh);font-size:.72rem;font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;padding:14px 36px;
+      background:transparent;border:2px solid var(--red);color:var(--red);
+      border-radius:4px;cursor:pointer;transition:.2s;
+    }
+    .btn-load-more:hover{background:var(--red);color:var(--white);}
+    .btn-load-more:disabled{opacity:.4;cursor:default;}
+
+    /* EMPTY STATE */
+    .empty{text-align:center;padding:60px 24px;color:var(--gray-mid);}
+    .empty svg{width:48px;height:48px;fill:var(--gray-dark);margin-bottom:16px;}
+    .empty p{font-size:.88rem;}
+
+    /* LIGHTBOX */
+    #lb{
+      display:none;position:fixed;inset:0;z-index:9999;
+      background:rgba(0,0,0,.95);
+      align-items:center;justify-content:center;
+      flex-direction:column;gap:16px;
+    }
+    #lb.open{display:flex;}
+    #lb img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;}
+    #lb-close{
+      position:fixed;top:20px;right:24px;
+      background:rgba(255,255,255,.1);border:none;color:var(--white);
+      width:42px;height:42px;border-radius:50%;font-size:1.4rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;transition:.2s;
+    }
+    #lb-close:hover{background:var(--red);}
+    #lb-nav{display:flex;gap:16px;}
+    .lb-arrow{
+      background:rgba(192,0,58,.3);border:2px solid var(--red);color:var(--white);
+      width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;transition:.2s;
+    }
+    .lb-arrow:hover{background:var(--red);}
+
+    /* FOOTER */
+    footer{
+      text-align:center;padding:32px 24px;
+      border-top:1px solid var(--gray-dark);
+      color:var(--gray-mid);font-size:.75rem;
+    }
+    footer a{color:var(--red);text-decoration:none;}
+
+    @media(max-width:600px){
+      .gal-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+      
+    }
+  </style>
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NVG8P499');
+  </script>
+  <!-- End Google Tag Manager -->
+<style>:root{--red:#d51c5b;--red-dark:#af174b;--red-deep:#111;--bg:#111;--bg-mid:#1b1b1b;--gray-dark:#383838;--gray-mid:#aaa;--gray-light:#ddd}.gal-hero{background:#111}nav{background:#111;border-color:#333}.gal-hero h1{font-weight:600;text-transform:none;letter-spacing:-.05em}.gal-grid img{border-radius:4px}</style><meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image:alt" content="Mulher, Não Se Cale! — movimento de conscientização no Distrito Federal"/>
+<meta name="twitter:image:alt" content="Mulher, Não Se Cale! — movimento no Distrito Federal"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "NGO",
+      "@id": "https://mulhernaosecale.com.br/#instituto",
+      "name": "Instituto Inside Brasil",
+      "url": "https://insidebrasil.org.br/",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "CNPJ",
+        "value": "18.683.437/0001-32"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://mulhernaosecale.com.br/#movimento",
+      "name": "Movimento Mulher, Não Se Cale!",
+      "alternateName": "Mulher, Não Se Cale!",
+      "url": "https://mulhernaosecale.com.br/",
+      "description": "É uma iniciativa permanente do Instituto Inside Brasil que leva informação, conscientização e mobilização social para prevenir e enfrentar a violência contra a mulher no Distrito Federal.",
+      "parentOrganization": {
+        "@id": "https://mulhernaosecale.com.br/#instituto"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Distrito Federal, Brasil"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mulhernaosecale.com.br/images/favicon/android-chrome-512.png"
+      },
+      "sameAs": [
+        "https://instagram.com/mulhernaosecale_df",
+        "https://www.youtube.com/@institutoinsidebrasil5569"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://mulhernaosecale.com.br/#website",
+      "url": "https://mulhernaosecale.com.br/",
+      "name": "Mulher, Não Se Cale!",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://mulhernaosecale.com.br/#instituto"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://mulhernaosecale.com.br/galeria.html#webpage",
+      "url": "https://mulhernaosecale.com.br/galeria.html",
+      "name": "Fotos do movimento no DF | Mulher, Não Se Cale!",
+      "description": "Veja os registros das edições do Movimento Mulher, Não Se Cale! no Distrito Federal: ações em estações do metrô, terminais, feiras e comunidades.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://mulhernaosecale.com.br/#website"
+      },
+      "about": {
+        "@id": "https://mulhernaosecale.com.br/#movimento"
+      },
+      "publisher": {
+        "@id": "https://mulhernaosecale.com.br/#instituto"
+      },
+      "breadcrumb": {
+        "@id": "https://mulhernaosecale.com.br/galeria.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mulhernaosecale.com.br/galeria.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://mulhernaosecale.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Galeria de fotos",
+          "item": "https://mulhernaosecale.com.br/galeria.html"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVG8P499"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="./index.html">
+    <img src="./images/logo-branca-header.webp" alt="Mulher Não Se Cale" decoding="async"/>
+  </a>
+  <a class="back" href="./index.html">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Voltar ao site
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="gal-hero">
+  <h1>Galeria de <span>Fotos</span></h1>
+  <p>Registros das ações do Movimento Mulher, Não Se Cale! em todo o Distrito Federal.</p>
+</div>
+
+
+<div class="gal-main">
+  <div class="gal-grid" id="galGrid">
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 1">
+      <img src="./images/galeria/foto-01.webp" alt="Mulher Não Se Cale — foto 1" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 2">
+      <img src="./images/galeria/foto-02.webp" alt="Mulher Não Se Cale — foto 2" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 3">
+      <img src="./images/galeria/foto-03.webp" alt="Mulher Não Se Cale — foto 3" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 4">
+      <img src="./images/galeria/foto-04.webp" alt="Mulher Não Se Cale — foto 4" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 5">
+      <img src="./images/galeria/foto-05.webp" alt="Mulher Não Se Cale — foto 5" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 6">
+      <img src="./images/galeria/foto-06.webp" alt="Mulher Não Se Cale — foto 6" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 7">
+      <img src="./images/galeria/foto-07.webp" alt="Mulher Não Se Cale — foto 7" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 8">
+      <img src="./images/galeria/foto-08.webp" alt="Mulher Não Se Cale — foto 8" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 9">
+      <img src="./images/galeria/foto-09.webp" alt="Mulher Não Se Cale — foto 9" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 10">
+      <img src="./images/galeria/foto-10.webp" alt="Mulher Não Se Cale — foto 10" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 11">
+      <img src="./images/galeria/foto-11.webp" alt="Mulher Não Se Cale — foto 11" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 12">
+      <img src="./images/galeria/foto-12.webp" alt="Mulher Não Se Cale — foto 12" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 13">
+      <img src="./images/galeria/foto-13.webp" alt="Mulher Não Se Cale — foto 13" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 14">
+      <img src="./images/galeria/foto-14.webp" alt="Mulher Não Se Cale — foto 14" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 15">
+      <img src="./images/galeria/foto-15.webp" alt="Mulher Não Se Cale — foto 15" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 16">
+      <img src="./images/galeria/foto-16.webp" alt="Mulher Não Se Cale — foto 16" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 17">
+      <img src="./images/galeria/foto-17.webp" alt="Mulher Não Se Cale — foto 17" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 18">
+      <img src="./images/galeria/foto-18.webp" alt="Mulher Não Se Cale — foto 18" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 19">
+      <img src="./images/galeria/foto-19.webp" alt="Mulher Não Se Cale — foto 19" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 20">
+      <img src="./images/galeria/foto-20.webp" alt="Mulher Não Se Cale — foto 20" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 21">
+      <img src="./images/galeria/foto-21.webp" alt="Mulher Não Se Cale — foto 21" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 22">
+      <img src="./images/galeria/foto-22.webp" alt="Mulher Não Se Cale — foto 22" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 23">
+      <img src="./images/galeria/foto-23.webp" alt="Mulher Não Se Cale — foto 23" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 24">
+      <img src="./images/galeria/foto-24.webp" alt="Mulher Não Se Cale — foto 24" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 25">
+      <img src="./images/galeria/foto-25.webp" alt="Mulher Não Se Cale — foto 25" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 26">
+      <img src="./images/galeria/foto-26.webp" alt="Mulher Não Se Cale — foto 26" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 27">
+      <img src="./images/galeria/foto-27.webp" alt="Mulher Não Se Cale — foto 27" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 28">
+      <img src="./images/galeria/foto-28.webp" alt="Mulher Não Se Cale — foto 28" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 29">
+      <img src="./images/galeria/foto-29.webp" alt="Mulher Não Se Cale — foto 29" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 30">
+      <img src="./images/galeria/foto-30.webp" alt="Mulher Não Se Cale — foto 30" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 31">
+      <img src="./images/galeria/foto-31.webp" alt="Mulher Não Se Cale — foto 31" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 32">
+      <img src="./images/galeria/foto-32.webp" alt="Mulher Não Se Cale — foto 32" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 33">
+      <img src="./images/galeria/foto-33.webp" alt="Mulher Não Se Cale — foto 33" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 34">
+      <img src="./images/galeria/foto-34.webp" alt="Mulher Não Se Cale — foto 34" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 35">
+      <img src="./images/galeria/foto-35.webp" alt="Mulher Não Se Cale — foto 35" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 36">
+      <img src="./images/galeria/foto-36.webp" alt="Mulher Não Se Cale — foto 36" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 37">
+      <img src="./images/galeria/foto-37.webp" alt="Mulher Não Se Cale — foto 37" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 38">
+      <img src="./images/galeria/foto-38.webp" alt="Mulher Não Se Cale — foto 38" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 39">
+      <img src="./images/galeria/foto-39.webp" alt="Mulher Não Se Cale — foto 39" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 40">
+      <img src="./images/galeria/foto-40.webp" alt="Mulher Não Se Cale — foto 40" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 41">
+      <img src="./images/galeria/foto-41.webp" alt="Mulher Não Se Cale — foto 41" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 42">
+      <img src="./images/galeria/foto-42.webp" alt="Mulher Não Se Cale — foto 42" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 43">
+      <img src="./images/galeria/foto-43.webp" alt="Mulher Não Se Cale — foto 43" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 44">
+      <img src="./images/galeria/foto-44.webp" alt="Mulher Não Se Cale — foto 44" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 45">
+      <img src="./images/galeria/foto-45.webp" alt="Mulher Não Se Cale — foto 45" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 46">
+      <img src="./images/galeria/foto-46.webp" alt="Mulher Não Se Cale — foto 46" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 47">
+      <img src="./images/galeria/foto-47.webp" alt="Mulher Não Se Cale — foto 47" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 48">
+      <img src="./images/galeria/foto-48.webp" alt="Mulher Não Se Cale — foto 48" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 49">
+      <img src="./images/galeria/foto-49.webp" alt="Mulher Não Se Cale — foto 49" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 50">
+      <img src="./images/galeria/foto-50.webp" alt="Mulher Não Se Cale — foto 50" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 51">
+      <img src="./images/galeria/foto-51.webp" alt="Mulher Não Se Cale — foto 51" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 52">
+      <img src="./images/galeria/foto-52.webp" alt="Mulher Não Se Cale — foto 52" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 53">
+      <img src="./images/galeria/foto-53.webp" alt="Mulher Não Se Cale — foto 53" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 54">
+      <img src="./images/galeria/foto-54.webp" alt="Mulher Não Se Cale — foto 54" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 55">
+      <img src="./images/galeria/foto-55.webp" alt="Mulher Não Se Cale — foto 55" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 56">
+      <img src="./images/galeria/foto-56.webp" alt="Mulher Não Se Cale — foto 56" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 57">
+      <img src="./images/galeria/foto-57.webp" alt="Mulher Não Se Cale — foto 57" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 58">
+      <img src="./images/galeria/foto-58.webp" alt="Mulher Não Se Cale — foto 58" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 59">
+      <img src="./images/galeria/foto-59.webp" alt="Mulher Não Se Cale — foto 59" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 60">
+      <img src="./images/galeria/foto-60.webp" alt="Mulher Não Se Cale — foto 60" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 61">
+      <img src="./images/galeria/foto-61.webp" alt="Mulher Não Se Cale — foto 61" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 62">
+      <img src="./images/galeria/foto-62.webp" alt="Mulher Não Se Cale — foto 62" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 63">
+      <img src="./images/galeria/foto-63.webp" alt="Mulher Não Se Cale — foto 63" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 64">
+      <img src="./images/galeria/foto-64.webp" alt="Mulher Não Se Cale — foto 64" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 65">
+      <img src="./images/galeria/foto-65.webp" alt="Mulher Não Se Cale — foto 65" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 66">
+      <img src="./images/galeria/foto-66.webp" alt="Mulher Não Se Cale — foto 66" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 67">
+      <img src="./images/galeria/foto-67.webp" alt="Mulher Não Se Cale — foto 67" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 68">
+      <img src="./images/galeria/foto-68.webp" alt="Mulher Não Se Cale — foto 68" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 69">
+      <img src="./images/galeria/foto-69.webp" alt="Mulher Não Se Cale — foto 69" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 70">
+      <img src="./images/galeria/foto-70.webp" alt="Mulher Não Se Cale — foto 70" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 71">
+      <img src="./images/galeria/foto-71.webp" alt="Mulher Não Se Cale — foto 71" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 72">
+      <img src="./images/galeria/foto-72.webp" alt="Mulher Não Se Cale — foto 72" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 73">
+      <img src="./images/galeria/foto-73.webp" alt="Mulher Não Se Cale — foto 73" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 74">
+      <img src="./images/galeria/foto-74.webp" alt="Mulher Não Se Cale — foto 74" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 75">
+      <img src="./images/galeria/foto-75.webp" alt="Mulher Não Se Cale — foto 75" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 76">
+      <img src="./images/galeria/foto-76.webp" alt="Mulher Não Se Cale — foto 76" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 77">
+      <img src="./images/galeria/foto-77.webp" alt="Mulher Não Se Cale — foto 77" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 78">
+      <img src="./images/galeria/foto-78.webp" alt="Mulher Não Se Cale — foto 78" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 79">
+      <img src="./images/galeria/foto-79.webp" alt="Mulher Não Se Cale — foto 79" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 80">
+      <img src="./images/galeria/foto-80.webp" alt="Mulher Não Se Cale — foto 80" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 81">
+      <img src="./images/galeria/foto-81.webp" alt="Mulher Não Se Cale — foto 81" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 82">
+      <img src="./images/galeria/foto-82.webp" alt="Mulher Não Se Cale — foto 82" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+    <div class="gal-item" data-tag="2026" data-title="Ação da campanha Mulher, Não Se Cale! — foto 83">
+      <img src="./images/galeria/foto-83.webp" alt="Mulher Não Se Cale — foto 83" loading="lazy"
+           onclick="openLB(this.src, this.closest('.gal-item'))" decoding="async"/>
+    </div>
+  </div>
+
+  <!-- Fotos do Cloudinary (dinâmicas) -->
+  <div id="cloudGrid" class="gal-grid" style="margin-top:12px;"></div>
+
+  <div class="load-wrap" id="loadWrap" style="display:none;">
+    <button class="btn-load-more" id="btnLoadMore" onclick="loadMoreCloud()">Carregar mais fotos</button>
+  </div>
+
+  <div class="empty" id="emptyState" style="display:none;">
+    <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+    <p>Nenhuma foto encontrada para esse filtro.</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <button id="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="Foto do evento"/>
+  <div id="lb-nav">
+    <button class="lb-arrow" onclick="lbNav(-1)">&#8592;</button>
+    <button class="lb-arrow" onclick="lbNav(1)">&#8594;</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Movimento Mulher, Não Se Cale! | <a href="./index.html">Voltar ao site</a></p>
+</footer>
+
+<script>
+  // ── Estado ──
+  var currentFilter = 'all';
+  var cloudPhotos = [];
+  var cloudPage = 0;
+  var cloudPerPage = 24;
+  var lbItems = [];
+  var lbIndex = 0;
+
+  // ── Filtros ──
+  function setFilter(btn, tag) {
+    document.querySelectorAll('.fbtn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    currentFilter = tag;
+    applyFilters();
+  }
+
+  function applyFilters() {
+    var searchEl = document.getElementById('searchInput');
+    var search = searchEl ? searchEl.value.toLowerCase() : '';
+    var items = document.querySelectorAll('#galGrid .gal-item, #cloudGrid .gal-item');
+    var visible = 0;
+    items.forEach(function(item) {
+      var tag = item.getAttribute('data-tag') || '';
+      var title = (item.getAttribute('data-title') || '').toLowerCase();
+      var matchFilter = (currentFilter === 'all' || tag === currentFilter);
+      var matchSearch = (!search || title.includes(search));
+      if (matchFilter && matchSearch) { item.classList.remove('hidden'); visible++; }
+      else { item.classList.add('hidden'); }
+    });
+    var countEl = document.getElementById('galCount');
+    if (countEl) countEl.textContent = visible + ' fotos';
+    document.getElementById('emptyState').style.display = (visible === 0) ? 'block' : 'none';
+  }
+
+  // ── Cloudinary ──
+  // Cloudinary hardcoded
+  var CLOUD_NAME = 'dgqxadsmt';
+  var CLOUD_TAG  = 'mulhernaosecale'; // tag usada no upload
+
+  function loadCloudinary() {
+    cloudPhotos = [];
+    cloudPage = 0;
+    document.getElementById('cloudGrid').innerHTML = '';
+    var sk = '';
+    for (var i=0; i<6; i++) sk += '<div class="skeleton"></div>';
+    document.getElementById('cloudGrid').innerHTML = sk;
+    var url = 'https://res.cloudinary.com/' + CLOUD_NAME + '/image/list/' + CLOUD_TAG + '.json';
+    fetch(url)
+      .then(function(r){
+        if(!r.ok) throw new Error('Tag não encontrada (code ' + r.status + ')');
+        return r.json();
+      })
+      .then(function(data) {
+        cloudPhotos = (data.resources || []).map(function(r){
+          return {
+            url:   'https://res.cloudinary.com/' + CLOUD_NAME + '/image/upload/c_fill,w_800,h_600,q_auto/' + r.public_id + '.webp',
+            full:  'https://res.cloudinary.com/' + CLOUD_NAME + '/image/upload/q_auto/' + r.public_id + '.webp',
+            title: r.public_id.replace(/.*\//, '').replace(/_/g,' ')
+          };
+        });
+        document.getElementById('cloudGrid').innerHTML = '';
+        if (cloudPhotos.length > 0) {
+          renderCloudPage();
+        } else {
+          document.getElementById('cloudGrid').innerHTML =
+            '<p style="color:var(--gray-mid);font-size:.82rem;padding:16px 0;">Nenhuma foto encontrada com a tag <em>' + CLOUD_TAG + '</em>. Faça upload das fotos no Cloudinary com essa tag.</p>';
+        }
+      })
+      .catch(function(err){
+        document.getElementById('cloudGrid').innerHTML =
+          '<p style="color:var(--gray-mid);font-size:.82rem;padding:16px 0;">Cloudinary: ' + err.message + '<br>Certifique-se de que as fotos foram subidas com a tag <strong>' + CLOUD_TAG + '</strong>.</p>';
+      });
+  }
+
+  function renderCloudPage() {
+    var start = cloudPage * cloudPerPage;
+    var end = Math.min(start + cloudPerPage, cloudPhotos.length);
+    var grid = document.getElementById('cloudGrid');
+    for (var i = start; i < end; i++) {
+      (function(photo, idx){
+        var div = document.createElement('div');
+        div.className = 'gal-item';
+        div.setAttribute('data-tag', '2025');
+        div.setAttribute('data-title', photo.title);
+        div.setAttribute('data-cloud-idx', idx);
+        div.innerHTML = '<img src="' + photo.url + '" alt="' + (photo.title || 'Mulher Não Se Cale') + '" loading="lazy" onclick="openCloudLB(' + idx + ')"/>';
+        grid.appendChild(div);
+      })(cloudPhotos[i], i);
+    }
+    cloudPage++;
+    document.getElementById('loadWrap').style.display = (end < cloudPhotos.length) ? 'block' : 'none';
+    applyFilters();
+  }
+
+  function loadMoreCloud() {
+    renderCloudPage();
+  }
+
+  // ── Lightbox ──
+  function collectVisible() {
+    lbItems = [];
+    document.querySelectorAll('#galGrid .gal-item:not(.hidden), #cloudGrid .gal-item:not(.hidden)').forEach(function(item){
+      var img = item.querySelector('img');
+      if (img) lbItems.push(img.src);
+    });
+  }
+
+  function openLB(src, item) {
+    collectVisible();
+    lbIndex = lbItems.indexOf(src);
+    if (lbIndex < 0) lbIndex = 0;
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openCloudLB(idx) {
+    var photo = cloudPhotos[idx];
+    if (!photo) return;
+    collectVisible();
+    document.getElementById('lb-img').src = photo.full || photo.url;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLB() {
+    document.getElementById('lb').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function lbNav(dir) {
+    lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+    document.getElementById('lb-img').src = lbItems[lbIndex];
+  }
+
+  document.getElementById('lb').addEventListener('click', function(e){
+    if (e.target === this) closeLB();
+  });
+  document.addEventListener('keydown', function(e){
+    if (!document.getElementById('lb').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') lbNav(-1);
+    if (e.key === 'ArrowRight') lbNav(1);
+  });
+
+  // Inicializar contagem e carregar Cloudinary automaticamente
+  applyFilters();
+  loadCloudinary();
+</script>
+</body>
+</html>

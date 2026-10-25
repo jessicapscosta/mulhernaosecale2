@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin.html
+Disallow: /qa-mobile.html
+
+Sitemap: https://mulhernaosecale.com.br/sitemap.xml
